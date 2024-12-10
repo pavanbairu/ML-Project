@@ -1,0 +1,17 @@
+1) error:-
+----------
+(D:\Data Science\github\Projects\ML\ML-Project\venv) PS D:\Data Science\github\Projects\ML\ML-Project> python src/exception.py
+Traceback (most recent call last):
+  File "D:\Data Science\github\Projects\ML\ML-Project\src\exception.py", line 4, in <module>
+    from src.logger import logging
+ModuleNotFoundError: No module named 'src'
+
+solution :-
+----------
+Module vs. Script Execution:
+python -m src.components.data_ingestion: This runs the module as part of a package, allowing relative imports to work correctly.
+python .\src\components\data_ingestion.py: This runs the script directly, which does not recognize the package structure.
+Import Resolution:
+When running as a module, Python adds the parent directory of src to the module search path, allowing it to find src and its submodules.
+When running a script directly, Python only adds the directory of the script to the search path, which does not include the src directory.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
