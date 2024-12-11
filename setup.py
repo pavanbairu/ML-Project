@@ -15,8 +15,6 @@ def getrequirements(file_path: str) -> List[str]:
         if HYPHEN_E_DOT in lines:
             lines.remove(HYPHEN_E_DOT)
     
-    print("*"*50)
-    print("pavan")
     return lines
 
 setup(
