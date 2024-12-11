@@ -15,3 +15,4 @@ Import Resolution:
 When running as a module, Python adds the parent directory of src to the module search path, allowing it to find src and its submodules.
 When running a script directly, Python only adds the directory of the script to the search path, which does not include the src directory.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+2. pip freeze > requirements.txt  --> to get the required dependencies
