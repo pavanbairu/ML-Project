@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 from typing import List
 
 HYPHEN_E_DOT = "-e ."
+
 def getrequirements(file_path: str) -> List[str]:
     """
         this function will return the list of packages to be installed
