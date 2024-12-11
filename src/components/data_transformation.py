@@ -1,7 +1,7 @@
 import os
 import sys
 
-from src.exception import FraudException
+from src.exception import StudentException
 from src.logger import logging
 from src.utils import save_obj
 
@@ -66,7 +66,7 @@ class DataTransformation():
             return preprocessing_obj
         
         except Exception as e:
-            raise FraudException(e,sys)
+            raise StudentException(e,sys)
         
     def initiate_data_transformation(self, train_path, test_path):
 
@@ -99,4 +99,4 @@ class DataTransformation():
             )
         
         except Exception as e:
-            raise FraudException(e,sys)
+            raise StudentException(e,sys)
