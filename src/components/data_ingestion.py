@@ -3,9 +3,10 @@ import os, sys
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-from src.exception import FraudException
+from src.exception import StudentException
 from src.logger import logging
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
+from src.components.model_trainer import ModelTrainer, ModelTrainerConfig
 
 @dataclass
 class DataIngestionConfig:
@@ -36,7 +37,7 @@ class DataIngestion:
 
             return (self.data_ingestion_config.train_data_path, self.data_ingestion_config.test_data_path)
         except Exception as e:
-            raise FraudException(e, sys)
+            raise StudentException(e, sys)
         
 if __name__ == "__main__":
     obj = DataIngestion()
@@ -44,3 +45,6 @@ if __name__ == "__main__":
 
     transform_obj = DataTransformation()
     train_arr, test_arr, _ = transform_obj.initiate_data_transformation(train_data, test_data)
+
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr, test_arr))
