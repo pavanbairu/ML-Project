@@ -12,7 +12,7 @@ def error_message_details(error, error_details:sys):
     return f"The error has been occured in python scipt name: {file_name} , line number: {line_no} , error message: {error}"
 
 
-class FraudException(Exception):
+class StudentException(Exception):
     def __init__(self, error_message, error_details:sys):
         super().__init__(error_message)
         self.error_message = error_message_details(error=error_message, error_details=error_details)
